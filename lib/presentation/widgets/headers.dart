@@ -93,18 +93,96 @@ class _HeaderTrianguloPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final lapiz = Paint();
 
-    // props to lapiz
     lapiz.color = Color.fromARGB(255, 54, 212, 244);
     lapiz.style = PaintingStyle.fill;
     lapiz.strokeWidth = 5;
 
     final path = Path();
 
-    // dibujar con el path y lapiz
     path.lineTo(size.width, size.height);
-    // path.lineTo(size.width, 0);
     path.lineTo(0, size.height);
     path.lineTo(0, 0);
+
+    canvas.drawPath(path, lapiz);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
+  }
+
+}
+
+class HeaderPico extends StatelessWidget {
+  const HeaderPico({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: double.infinity,
+      width: double.infinity,
+      child: CustomPaint(
+        painter: _HeaderPicoPainter(),
+      ),
+    );
+  }
+}
+
+class _HeaderPicoPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final lapiz = Paint();
+
+    lapiz.color = Color.fromARGB(255, 54, 212, 244);
+    lapiz.style = PaintingStyle.fill;
+    lapiz.strokeWidth = 5;
+
+    final path = Path();
+
+    path.lineTo(0, size.height * 0.25);
+    path.lineTo(size.width * 0.5, size.height * 0.30);
+    path.lineTo(size.width, size.height * 0.25);
+    path.lineTo(size.width, 0);
+
+    canvas.drawPath(path, lapiz);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
+  }
+
+}
+
+class HeaderCurvo extends StatelessWidget {
+  const HeaderCurvo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: double.infinity,
+      width: double.infinity,
+      child: CustomPaint(
+        painter: _HeaderCurvoPainter(),
+      ),
+    );
+  }
+}
+
+class _HeaderCurvoPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final lapiz = Paint();
+
+    lapiz.color = Color.fromARGB(255, 54, 212, 244);
+    lapiz.style = PaintingStyle.fill;
+    lapiz.strokeWidth = 15;
+
+    final path = Path();
+
+    path.lineTo(0, size.height * 0.25);
+    path.quadraticBezierTo(size.width * 0.5, size.height * 0.40, size.width, size.height * 0.25);
+    path.lineTo(size.width, 0);
 
     canvas.drawPath(path, lapiz);
   }

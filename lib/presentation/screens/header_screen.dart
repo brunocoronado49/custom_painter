@@ -7,7 +7,7 @@ class HeaderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: HeaderTriangulo(),
+      body: HeaderCurvo(),
     );
   }
 }

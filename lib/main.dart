@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Designs',
-      home: HeaderScreen(),
+      home: AnimationsScreen(),
     );
   }
 }
